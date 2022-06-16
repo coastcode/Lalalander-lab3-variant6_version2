@@ -1,6 +1,5 @@
 hypothesis
 grammpy == 1.2.1;python_version < '3.7'
-grammpy-transforms == 1.2.4;python_version < '3.7'
 pyparsers == 0.0.2
 lambda_interpreter == 1.1
 ply == 3.11
