@@ -10,7 +10,7 @@ from lambcal import *
 #         for _ in range(10):
 #             x=x.beta()
 #             print(x)   
-class LexTest(TestCase):
+class LexTest(unittest.TestCase):
     def test_first_alpha_reduction(self):
         result = lambda_cli_lex("((lambda x y. (x y)) y)")
         self.assertEqual(next(result), LeftBracket)
