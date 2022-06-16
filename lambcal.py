@@ -142,8 +142,8 @@ class ExpressionBodyToLambda(Rule):
     ]
 
     def get_body(self):
-        l = self.to_symbols[0]  # type: Lambda
-        yield l.get_representation()
+        lam = self.to_symbols[0]  # type: Lambda
+        yield lam.get_representation()
         try:
             yield from self.to_symbols[1].get_body()
         except IndexError:
@@ -177,7 +177,8 @@ class ExpressionRule(Rule):
 
 class LambdaRule(Rule):
     fromSymbol = Lambda
-    right = [LeftBracket, LambdaKeyword, Parameters, Dot, NoBracketExpression, RightBracket]
+    right = [LeftBracket, LambdaKeyword, Parameters, 
+             Dot, NoBracketExpression, RightBracket]
 
 
 class ParametersRule(Rule):
