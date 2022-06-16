@@ -177,7 +177,7 @@ class ExpressionRule(Rule):
 
 class LambdaRule(Rule):
     fromSymbol = Lambda
-    right = [LeftBracket, LambdaKeyword, Parameters, 
+    right = [LeftBracket, LambdaKeyword, Parameters,
              Dot, NoBracketExpression, RightBracket]
 
 
