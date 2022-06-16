@@ -2,14 +2,7 @@ import unittest
 from hypothesis import given,  strategies
 from lambcal import *
 
-# class LambcalTest(unittest.TestCase):
-#     def test_Lambcal(self):
-#         i = ''
-#         print('oral')
-#         print(x)
-#         for _ in range(10):
-#             x=x.beta()
-#             print(x)   
+
 class LexTest(unittest.TestCase):
     def test_first_alpha_reduction(self):
         result = lambda_cli_lex("((lambda x y. (x y)) y)")
@@ -36,3 +29,5 @@ class LexTest(unittest.TestCase):
         self.assertIsInstance(var, Variable)
         self.assertEqual(var.name, 'y')
         self.assertEqual(next(result), RightBracket)
+
+        
