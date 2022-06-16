@@ -287,10 +287,10 @@ def lambda_cli_lex(input):
 
 # parsings
 _g = ContextFree.remove_useless_symbols(lambda_grammar)
-_g = ContextFree.remove_rules_with_epsilon(_g, transform_grammar=True)
-_g = ContextFree.remove_unit_rules(_g, transform_grammar=True)
-_g = ContextFree.remove_useless_symbols(_g, transform_grammar=True)
-_g = ContextFree.transform_to_chomsky_normal_form(_g, transform_grammar=True)
+_g = ContextFree.remove_rules_with_epsilon(_g)
+_g = ContextFree.remove_unit_rules(_g)
+_g = ContextFree.remove_useless_symbols(_g)
+_g = ContextFree.transform_to_chomsky_normal_form(_g)
 
 
 def parse_from_tokens(input):
