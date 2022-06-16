@@ -30,4 +30,3 @@ class LexTest(unittest.TestCase):
         self.assertEqual(var.name, 'y')
         self.assertEqual(next(result), RightBracket)
 
-        
