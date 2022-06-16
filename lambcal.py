@@ -2,7 +2,7 @@
 from grammpy import Grammar, Nonterminal, Rule, EPS
 import interpreter
 # parsings
-from grammpy_transforms import ContextFree, InverseContextFree, InverseCommon
+from grammpy.transforms import ContextFree, InverseContextFree, InverseCommon
 from pyparsers import cyk
 from ply import lex
 
