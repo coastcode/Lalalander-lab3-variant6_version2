@@ -1,5 +1,5 @@
 hypothesis
-python == 3.6
+python == 3.6.7
 grammpy == 1.2.1
 grammpy-transforms == 1.2.4
 pyparsers == 0.0.2
