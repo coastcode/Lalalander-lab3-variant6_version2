@@ -1,6 +1,7 @@
 import unittest
-from hypothesis import given,  strategies
-from lambcal import *
+# from hypothesis import given,  strategies
+from lambcal import lambda_cli_lex, LeftBracket, LambdaKeyword
+from lambcal import Parameter, Dot, Variable, RightBracket
 
 
 class LexTest(unittest.TestCase):
