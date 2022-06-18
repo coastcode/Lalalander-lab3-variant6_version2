@@ -2,6 +2,8 @@ import unittest
 # from hypothesis import given,  strategies
 from lambcal import lambda_cli_lex, LeftBracket, LambdaKeyword
 from lambcal import Parameter, Dot, Variable, RightBracket, steps
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 class LambTest(unittest.TestCase):
@@ -34,13 +36,5 @@ class LambTest(unittest.TestCase):
     def test_Visualize(self):
         i = '((lambda x. (lambda z. (x z))) (z g))'
         for r in steps(i):
-            print(r)
-#         while True:
-#             i = input('>>>')
-#             if i == 'exit':
-#                 break
-#             try:
-#                 for r in steps(i):
-#                     print(r)
-#             except (LexException, ParsingException):
-#                 print('Invalid input')
+            logging.info("lambda term is {r}".format(r))
+#             print(r)
