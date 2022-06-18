@@ -1,10 +1,9 @@
-# grammpy
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
-from grammpy.transforms import ContextFree, InverseContextFree, InverseCommon
-from pyparsers import cyk
-from ply import lex
+from grammpy.transforms import ContextFree, InverseContextFree, InverseCommon  # type: ignore
+from pyparsers import cyk  # type: ignore
+from ply import lex  # type: ignore
 
 
 class ParsingException(Exception):
