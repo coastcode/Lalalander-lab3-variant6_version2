@@ -3,7 +3,8 @@ import interpreter  # type: ignore
 # parsings
 from grammpy.transforms import ContextFree, InverseCommon  # type: ignore
 from grammpy.transforms import InverseContextFree  # type: ignore
-from pyparsers import cyk  # type: ignore
+from grammpy.parsers import cyk  # type: ignore
+# from pyparsers import cyk  # type: ignore
 from ply import lex  # type: ignore
 
 
