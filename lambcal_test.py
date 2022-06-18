@@ -35,6 +35,6 @@ class LambTest(unittest.TestCase):
 
     def test_Visualize(self):
         i = '((lambda x. (lambda z. (x z))) (z g))'
-        for r in steps(i):
-            logging.info("lambda term is {r}".format(r))
+        for lam in steps(i):
+            logging.info("lambda term is {}".format(lam))
 #             print(r)
