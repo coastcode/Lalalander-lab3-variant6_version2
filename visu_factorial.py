@@ -47,12 +47,14 @@ class Lambda(object):
         res.append("}")
         # print(res)
         return "\n".join(res)
-# class Node:
-#     def __init__(self, label=None, children=None):
-#         self.label = label
-#         self.children = children if children is not None else list()
-#         self.next = None
 
-#     def addkid(self, n):
-#         self.children.append(n)
-#         return self
+
+class Node:
+    def __init__(self, label=None, children=None):
+        self.label = label
+        self.children = children if children is not None else list()
+        self.next = None
+
+    def addkid(self, n):
+        self.children.append(n)
+        return self
