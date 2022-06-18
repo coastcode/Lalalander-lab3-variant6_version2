@@ -1,6 +1,6 @@
 # grammpy
-from grammpy import Grammar, Nonterminal, Rule, EPS
-import interpreter
+from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
+import interpreter  # type: ignore
 # parsings
 from grammpy.transforms import ContextFree, InverseContextFree, InverseCommon
 from pyparsers import cyk
