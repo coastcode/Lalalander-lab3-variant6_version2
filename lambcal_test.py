@@ -32,15 +32,15 @@ class LambTest(unittest.TestCase):
         self.assertEqual(next(result), RightBracket)
         
     def test_Visualize(self):
-#         i = '((lambda x. (lambda z. (x z))) (z g))'
-#         for r in steps(i):
-#             print(r)
-        while True:
-            i = input('>>>')
-            if i == 'exit':
-                break
-            try:
-                for r in steps(i):
-                    print(r)
-            except (LexException, ParsingException):
-                print('Invalid input')
+        i = '((lambda x. (lambda z. (x z))) (z g))'
+        for r in steps(i):
+            print(r)
+#         while True:
+#             i = input('>>>')
+#             if i == 'exit':
+#                 break
+#             try:
+#                 for r in steps(i):
+#                     print(r)
+#             except (LexException, ParsingException):
+#                 print('Invalid input')
