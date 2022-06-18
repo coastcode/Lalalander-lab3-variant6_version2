@@ -30,7 +30,7 @@ class LambTest(unittest.TestCase):
         self.assertIsInstance(var, Variable)
         self.assertEqual(var.name, 'y')
         self.assertEqual(next(result), RightBracket)
-        
+
     def test_Visualize(self):
         i = '((lambda x. (lambda z. (x z))) (z g))'
         for r in steps(i):
