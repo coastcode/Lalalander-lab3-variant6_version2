@@ -1,7 +1,8 @@
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
-from grammpy.transforms import ContextFree, InverseContextFree, InverseCommon  # type: ignore
+from grammpy.transforms import ContextFree, InverseCommon  # type: ignore
+from grammpy.transforms import InverseContextFree  # type: ignore
 from pyparsers import cyk  # type: ignore
 from ply import lex  # type: ignore
 
