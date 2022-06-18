@@ -1,5 +1,5 @@
 import unittest
-from visualized import *
+from visu_factorial import *
 
 
 class FactorialTest(unittest.TestCase):
