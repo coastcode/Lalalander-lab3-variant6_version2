@@ -38,4 +38,3 @@ class LambTest(unittest.TestCase):
         for lam in steps(i):
             logging.info("lambda term is {}".format(lam))
 #             print(lam)
-
