@@ -1,5 +1,5 @@
 import unittest
-from visu_factorial import *
+from visu_factorial import Lambda
 
 
 class FactorialTest(unittest.TestCase):
