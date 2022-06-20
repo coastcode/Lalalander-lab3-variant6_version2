@@ -1,10 +1,13 @@
+from typing import Any
+
+
 class Lambda(object):
-    def __init__(self):
+    def __init__(self) -> None:
         self.node = Node()
         self.node.label = "start"
         self.node.children = []
 
-    def FACT(self, n):
+    def FACT(self, n: int) -> Any:
         cur = self.node
         while cur.next is not None:
             cur = cur.next
@@ -23,7 +26,7 @@ class Lambda(object):
         cur.addkid(f'{a}')
         return a
 
-    def visualize(self):
+    def visualize(self) -> str:
         cur = self.node
         res = []
         res.append("digraph G {")
@@ -50,11 +53,11 @@ class Lambda(object):
 
 
 class Node:
-    def __init__(self, label=None, children=None):
+    def __init__(self, label: Any = None, children=None) -> None:
         self.label = label
         self.children = children if children is not None else list()
         self.next = None
 
-    def addkid(self, n):
+    def addkid(self, n: int) -> Any:
         self.children.append(n)
         return self

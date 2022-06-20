@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 class LambTest(unittest.TestCase):
-    def test_reduction(self):
+    def test_reduction(self) -> None:
         result = lambda_cli_lex("((lambda x y. (x y)) y)")
         self.assertEqual(next(result), LeftBracket)
         self.assertEqual(next(result), LeftBracket)
@@ -33,8 +33,8 @@ class LambTest(unittest.TestCase):
         self.assertEqual(var.name, 'y')
         self.assertEqual(next(result), RightBracket)
 
-    def test_Visualize(self):
+    def test_Visualize(self) -> None:
         i = '((lambda x. (lambda z. (x z))) (z g))'
         for lam in steps(i):
             logging.info("lambda term is {}".format(lam))
-#             print(lam)
+            print(lam)

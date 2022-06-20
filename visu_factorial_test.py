@@ -3,7 +3,7 @@ from visu_factorial import Lambda
 
 
 class FactorialTest(unittest.TestCase):
-    def test_Factorial(self):
+    def test_Factorial(self) -> None:
         Lbd = Lambda()
         self.assertEqual(Lbd.FACT(5), 120)
         self.assertEqual(Lbd.FACT(8), 40320)

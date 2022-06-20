@@ -1,32 +1,57 @@
-# GROUP-NAME - lab NUMBER - variant NUMBER
+# Lalalander - lab 3 - variant 6
 
-This is an example project which demonstrates project structure and necessary
-CI checks. It is not the best structure for real-world projects, but good
-enough for educational purposes.
+This is an project which demonstrates the process of lambda-calculus and
+related tests. Although it is not the best structure for real-world lambda 
+calculus, it shows basic lambda calculus, the process of parse and definition
+of some expressions.
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
-   Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
+- `lambcal.py` -- Defines elements related to lambda calculus, such as 
+variables, constants, and parameters. Defines some expression bodies 
+and conversion rules between them, and realizes the function of 
+transforming defined expressions into lambda expressions.
+- `lambcal_test.py` -- Some tests for `lambcal` and log output.
+- `visu_factorial.py` -- Visualize the factorial computational process 
+models.
+- `visu_factorial_test.py` -- A test of the visual factorial 
+computational process function.
 
 ## Features
 
-- PBT: `test_add_commutative`
+- Defines expressions body.
+- Defines conversion rules for expressions.
+- Implements the visualization of computational process.
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- Wu Chenyun (1329846782@qq.com) -- Implementation.
+- Huang Yuting (hyut@hdu.edu.cn) -- Modification.
 
 ## Changelog
 
-- 29.03.2022 - 2
-  - Add test coverage.
-- 29.03.2022 - 1
-  - Update README. Add formal sections.
-- 29.03.2022 - 0
-  - Initial
+- 20.06.2022 - 2
+  - Modification program and update README.md.
+- 19.06.2022 - 1
+  - Update.
+- 16.06.2022 - 0
+  - Initial.
 
 ## Design notes
 
-- ...
+- Tag list and some regular expressions are used, and some expression 
+bodies and the quasi conversion rules between these expression bodies 
+are defined to realize the parsing of tags and expressions.
+- We visualized the factorial calculation and wrote it to the FSM. Dot file.
+
+## Evaluation strategies
+
+- Normal-order reduction: Continuing to apply the rule for β-reduction 
+in head position until no more such reductions are possible. At that point, the
+resulting term is in head normal form. One then continues applying a reduction 
+in the sub-terms.
+from left to the right.
+- Applicative order reduction: Firstly, applying the internal reductions and then
+only applying the head reduction when no more internal reductions are possible.
+- Conversion: β-conversion represents the evaluation of a function on an argument. 
+α-conversion is a technical device to change the names of bound variables.
