@@ -56,9 +56,9 @@ of some expressions.
   applying a reduction in the sub-terms from left to the right.
 
 - Applicative order reduction: Firstly, applying the internal reductions
-  and then only applying the head reduction when no more internal 
+  and then only applying the head reduction when no more internal
   reductions are possible.
 
 - Conversion: β-conversion represents the evaluation of a function on an
-  argument. α-conversion is a technical device to change the names of 
+  argument. α-conversion is a technical device to change the names of
   bound variables.
