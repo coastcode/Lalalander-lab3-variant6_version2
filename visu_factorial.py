@@ -27,14 +27,14 @@ class Lambda(object):
         return a
 
     def visualize(self) -> str:
-        cur = self.node
+        cur = self.node  # type: Any
         res = []
         res.append("digraph G {")
         res.append(" rankdir=LR;")
         res.append('    start')
         while cur is not None:
             if cur.label == "start":
-                cur = cur.next  # type: Any
+                cur = cur.next
             elif cur.label == "FACT":
                 print(cur.label)
                 for n in range(0, len(cur.children) - 2):
