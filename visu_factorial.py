@@ -53,11 +53,11 @@ class Lambda(object):
 
 
 class Node:
-    def __init__(self, label: Any = None, children=None) -> None:
+    def __init__(self, label: Any = None, children: Any = None) -> None:
         self.label = label
         self.children = children if children is not None else list()
         self.next = None
 
-    def addkid(self, n: int) -> Any:
+    def addkid(self, n: str) -> Any:
         self.children.append(n)
         return self
