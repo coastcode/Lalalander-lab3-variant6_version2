@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 
 
 class Lambda(object):
@@ -11,7 +11,7 @@ class Lambda(object):
         cur = self.node
         while cur.next is not None:
             cur = cur.next
-        cur.next = Any
+        cur.next = Optional[Any]
         cur.next = Node()
         cur = cur.next
         cur.label = "FACT"
