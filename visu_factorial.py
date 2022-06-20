@@ -11,8 +11,10 @@ class Lambda(object):
         cur = self.node
         while cur.next is not None:
             cur = cur.next
-        cur.next = Node()
-        cur = cur.next
+        node_new = Node()
+        cur.next = node_new     # 14
+        if cur is None:
+            cur = cur.next        # 15
         cur.label = "FACT"
         while cur.next is not None:
             cur = cur.next
@@ -34,7 +36,7 @@ class Lambda(object):
         res.append('    start')
         while cur is not None:
             if cur.label == "start":
-                cur = cur.next
+                cur = cur.next   # 37
             elif cur.label == "FACT":
                 print(cur.label)
                 for n in range(0, len(cur.children) - 2):
@@ -46,7 +48,7 @@ class Lambda(object):
                     res.append(f'{cur.children[i]}*')
                 res.append('1')
                 res.append(f'{cur.children[i + 2]}')
-                cur = cur.next     # 49
+                cur = cur.next       # 49
         res.append("}")
         # print(res)
         return "\n".join(res)
