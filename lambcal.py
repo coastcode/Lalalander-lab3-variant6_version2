@@ -1,10 +1,9 @@
 from typing import Any
-
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
 from grammpy.transforms import ContextFree, InverseCommon  # type: ignore
-from grammpy.transforms import InverseContextFree  # type: ignore
+from grammpy.transforms import InverseContextFree
 from grammpy.parsers import cyk  # type: ignore
 # from pyparsers import cyk  # type: ignore
 from ply import lex  # type: ignore
