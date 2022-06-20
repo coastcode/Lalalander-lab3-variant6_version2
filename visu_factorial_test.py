@@ -8,9 +8,9 @@ class FactorialTest(unittest.TestCase):
         self.assertEqual(Lbd.FACT(5), 120)
         self.assertEqual(Lbd.FACT(8), 40320)
         dot = Lbd.visualize()
-        f = open('fsm.dot', 'w')
-        f.write(dot)
-        f.close()
+        # f = open('fsm.dot', 'w')
+        # f.write(dot)
+        # f.close()
 
 
 if __name__ == '__main__':
