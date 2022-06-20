@@ -11,12 +11,8 @@ class Lambda(object):
         cur = self.node
         while cur.next is not None:
             cur = cur.next
-        # node_new = Node()
-        # cur.next = node_new     # 14
-        # if cur is None:
-        #     cur = cur.next        # 15
-        node_new = Node()
-        cur.next = node_new
+        cur.next = None
+        cur.next = Node()
         cur = cur.next
         cur.label = "FACT"
         while cur.next is not None:
