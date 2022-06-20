@@ -47,10 +47,8 @@ class Lambda(object):
                     print(f'=>(λn.n=0?1:n * ((Y M)(n - 1)))){cur.children[n]}')
                     print(f'=>{cur.children[n]}*((Y M)({cur.children[n]}- 1))')
                     print(f'=>{cur.children[n]}*((Y M){cur.children[n + 1]})')
-                j = 0
                 for i in range(0, len(cur.children) - 2):
                     res.append(f'{cur.children[i]}*')
-                    j = i
                 res.append('1')
                 res.append(f'{cur.children[i + 2]}')
                 # res.append(f'{cur.children[j + 2]}')
