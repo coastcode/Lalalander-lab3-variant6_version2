@@ -11,7 +11,7 @@ class Lambda(object):
         cur = self.node  # type: Any
         while cur.next is not None:
             cur = cur.next
-        cur.next = Node()  # type: Any
+        cur.next = Node()
         cur = cur.next
         cur.label = "FACT"
         while cur.next is not None:
@@ -34,7 +34,7 @@ class Lambda(object):
         res.append('    start')
         while cur is not None:
             if cur.label == "start":
-                cur = cur.next
+                cur = cur.next  # type: Any
             elif cur.label == "FACT":
                 print(cur.label)
                 for n in range(0, len(cur.children) - 2):
