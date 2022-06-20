@@ -8,11 +8,11 @@ class Lambda(object):
         self.node.children = []
 
     def FACT(self, n: int) -> Any:
-        cur = self.node
+        cur = self.node  # type: Any
         while cur.next is not None:
             cur = cur.next
         cur.next = Node()  # type: Any
-        cur = cur.next  # type: Any
+        cur = cur.next
         cur.label = "FACT"
         while cur.next is not None:
             cur = cur.next
