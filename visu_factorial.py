@@ -3,8 +3,7 @@ from typing import Any
 
 class Lambda(object):
     def __init__(self) -> None:
-        # self.node = Node()
-        self.node = Node(None, None)
+        self.node = Node()
         self.node.label = "start"
         self.node.children = []
 
@@ -12,8 +11,8 @@ class Lambda(object):
         cur = self.node
         while cur.next is not None:
             cur = cur.next
-        # cur.next = Node()
-        cur.next = Node(None, None)
+        cur.next = None
+        cur.next = Node()
         cur = cur.next
         cur.label = "FACT"
         while cur.next is not None:
@@ -48,7 +47,6 @@ class Lambda(object):
                     res.append(f'{cur.children[i]}*')
                 res.append('1')
                 res.append(f'{cur.children[i + 2]}')
-                # res.append(f'{cur.children[j + 2]}')
                 cur = cur.next       # 49
         res.append("}")
         # print(res)
@@ -56,8 +54,7 @@ class Lambda(object):
 
 
 class Node:
-    # def __init__(self, label: Any = None, children: Any = None) -> None:
-    def __init__(self, label: Any, children: Any) -> None:
+    def __init__(self, label: Any = None, children: Any = None) -> None:
         self.label = label
         self.children = children if children is not None else list()
         self.next = None
