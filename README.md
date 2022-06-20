@@ -14,10 +14,10 @@ transforming defined expressions into lambda expressions.
 
 - `lambcal_test.py` -- Some tests for `lambcal` and log output.
 
-- `visu_factorial.py` -- Visualize the factorial computational process.
+- `visu_factorial.py` -- Visualize the factorial computational process
 models.
 
-- `visu_factorial_test.py` -- A test of the visual factorial.
+- `visu_factorial_test.py` -- A test of the visual factorial
 computational process function.
 
 ## Features
@@ -34,7 +34,7 @@ computational process function.
 ## Changelog
 
 - 20.06.2022 - 2
-  - Modification program and update README.md.
+  - Modification program and update README file.
 - 19.06.2022 - 1
   - Update.
 - 16.06.2022 - 0
@@ -42,11 +42,11 @@ computational process function.
 
 ## Design notes
 
-- Tag list and some regular expressions are used, and some expression
+- Token list and some regular expressions are used, and some expression
 bodies and the quasi conversion rules between these expression bodies
 are defined to realize the parsing of tags and expressions.
 
-- We visualized the factorial calculation and wrote it to the FSM. Dot file.
+- We visualized the factorial calculation and wrote it to the fsm file.
 
 ## Evaluation strategies
 
@@ -55,8 +55,9 @@ in head position until no more such reductions are possible. At that point, the
 resulting term is in head normal form. One then continues applying a reduction
 in the sub-terms from left to the right.
 
-- Applicative order reduction: Firstly, applying the internal reductions and then
-only applying the head reduction when no more internal reductions are possible.
+- Applicative order reduction: Firstly, applying the internal reductions and 
+then only applying the head reduction when no more internal reductions are 
+possible.
 
 - Conversion: β-conversion represents the evaluation of a function on an
 argument. α-conversion is a technical device to change the names of bound
