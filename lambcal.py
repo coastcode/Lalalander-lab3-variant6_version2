@@ -46,7 +46,7 @@ class Number:
 
 
 class Variable:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: Any) -> None:
         self.name = name
 
     def __hash__(self) -> Any:
@@ -54,7 +54,7 @@ class Variable:
 
 
 class Parameter:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: Any) -> None:
         self.name = name
 
     def __hash__(self) -> Any:
