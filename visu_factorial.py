@@ -18,7 +18,7 @@ class Lambda(object):
             cur = cur.next
         fact = (lambda a: lambda v: a(a, v))(
             lambda s, x: 1 if x == 0 else x * s(s, x - 1))
-        a = fact(n)
+        a = fact()
         while n > 1:
             cur.addkid(f'{n}')
             n -= 1

@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, List
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
@@ -38,7 +38,7 @@ class RightBracket:
 
 
 class Number:
-    def __init__(self, value) -> None:
+    def __init__(self, value: int) -> None:
         self.value = value
 
     def __hash__(self) -> Any:
@@ -46,7 +46,7 @@ class Number:
 
 
 class Variable:
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
 
     def __hash__(self) -> Any:
@@ -54,7 +54,7 @@ class Variable:
 
 
 class Parameter:
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
 
     def __hash__(self) -> Any:
@@ -113,7 +113,7 @@ class ExpressionBodyToVariable(Rule):
         ([ExpressionBody], [Variable])
     ]
 
-    def get_body(self) -> Any:
+    def get_body(self) -> List[Any]:
         variable = self.to_symbols[0].s  # type: Variable
         yield interpreter.Variable(variable.name)
         try:
@@ -128,7 +128,7 @@ class ExpressionBodyToNumber(Rule):
         ([ExpressionBody], [Number])
     ]
 
-    def get_body(self) -> Any:
+    def get_body(self) -> List[Any]:
         num = self.to_symbols[0].s  # type: Number
         yield interpreter.Variable(num.value)
         try:
@@ -143,7 +143,7 @@ class ExpressionBodyToLambda(Rule):
         ([ExpressionBody], [Lambda])
     ]
 
-    def get_body(self) -> Any:
+    def get_body(self) -> List[Any]:
         lam = self.to_symbols[0]  # type: Lambda
         yield lam.get_representation()
         try:
@@ -158,7 +158,7 @@ class ExpressionBodyToExpression(Rule):
         ([ExpressionBody], [Expression])
     ]
 
-    def get_body(self) -> Any:
+    def get_body(self) -> List[Any]:
         expr = self.to_symbols[0]  # type: Expression
         yield expr.get_representation()
         try:
