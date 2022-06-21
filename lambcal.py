@@ -1,7 +1,8 @@
-from typing import Any, Generator
+from typing import Any, Generator, List
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
+from grammpy.representation.support import _RuleConnectable
 from grammpy.transforms import ContextFree, InverseCommon  # type: ignore
 from grammpy.transforms import InverseContextFree
 from grammpy.parsers import cyk  # type: ignore
@@ -115,8 +116,8 @@ class ExpressionBodyToVariable(Rule):  # type: ignore
         ([ExpressionBody], [Variable])
     ]
 
-    # def get_body(self) -> List[Any]:      # 116
-    def get_body(self) -> Generator:
+    # def get_body(self) -> List[Any]:
+    def get_body(self) -> List[_RuleConnectable]:
         variable = self.to_symbols[0].s  # type: Variable
         yield interpreter.Variable(variable.name)
         try:
@@ -132,7 +133,7 @@ class ExpressionBodyToNumber(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:      # 131
-    def get_body(self) -> Generator:
+    def get_body(self) -> List[_RuleConnectable]:
         num = self.to_symbols[0].s  # type: Number
         yield interpreter.Variable(num.value)
         try:
@@ -148,7 +149,7 @@ class ExpressionBodyToLambda(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:        # 146
-    def get_body(self) -> Generator:
+    def get_body(self) -> Any:
         lam = self.to_symbols[0]  # type: Lambda
         yield lam.get_representation()
         try:
@@ -164,7 +165,7 @@ class ExpressionBodyToExpression(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:      # 161
-    def get_body(self) -> Generator:
+    def get_body(self) -> Any:
         expr = self.to_symbols[0]  # type: Expression
         yield expr.get_representation()
         try:
