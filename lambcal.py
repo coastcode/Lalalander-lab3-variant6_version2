@@ -130,7 +130,7 @@ class ExpressionBodyToNumber(Rule):  # type: ignore
         ([ExpressionBody], [Number])
     ]
 
-    def get_body(self) -> Any:      # 131
+    def get_body(self) -> Any:
         num = self.to_symbols[0].s  # type: Number
         yield interpreter.Variable(num.value)
         try:
