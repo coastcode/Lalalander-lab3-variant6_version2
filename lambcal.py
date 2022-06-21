@@ -2,7 +2,6 @@ from typing import Any
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
-from grammpy.representation.support import _RuleConnectable
 from grammpy.transforms import ContextFree, InverseCommon  # type: ignore
 from grammpy.transforms import InverseContextFree
 from grammpy.parsers import cyk  # type: ignore
