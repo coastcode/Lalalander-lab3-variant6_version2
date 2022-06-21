@@ -1,4 +1,4 @@
-from typing import Any, List
+from typing import Any
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
@@ -131,8 +131,7 @@ class ExpressionBodyToNumber(Rule):  # type: ignore
         ([ExpressionBody], [Number])
     ]
 
-    # def get_body(self) -> List[Any]:      # 131
-    def get_body(self) -> List[_RuleConnectable]:
+    def get_body(self) -> Any:      # 131
         num = self.to_symbols[0].s  # type: Number
         yield interpreter.Variable(num.value)
         try:
@@ -147,7 +146,6 @@ class ExpressionBodyToLambda(Rule):  # type: ignore
         ([ExpressionBody], [Lambda])
     ]
 
-    # def get_body(self) -> List[Any]:        # 146
     def get_body(self) -> Any:
         lam = self.to_symbols[0]  # type: Lambda
         yield lam.get_representation()
@@ -163,7 +161,6 @@ class ExpressionBodyToExpression(Rule):  # type: ignore
         ([ExpressionBody], [Expression])
     ]
 
-    # def get_body(self) -> List[Any]:      # 161
     def get_body(self) -> Any:
         expr = self.to_symbols[0]  # type: Expression
         yield expr.get_representation()
