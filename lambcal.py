@@ -1,4 +1,4 @@
-from typing import Any, List, TypeVar
+from typing import Any, TypeVar
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
