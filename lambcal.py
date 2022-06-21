@@ -1,4 +1,4 @@
-from typing import Any, Generator, List
+from typing import Any, List
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
