@@ -1,4 +1,4 @@
-from typing import Any, TypeVar
+from typing import Any, Generator
 from grammpy import Grammar, Nonterminal, Rule, EPS  # type: ignore
 import interpreter  # type: ignore
 # parsings
@@ -8,7 +8,7 @@ from grammpy.parsers import cyk  # type: ignore
 # from pyparsers import cyk  # type: ignore
 from ply import lex  # type: ignore
 
-T = TypeVar('T')
+# T = TypeVar('T')
 
 
 class ParsingException(Exception):
@@ -40,7 +40,7 @@ class RightBracket:
 
 
 class Number:
-    def __init__(self, value: int) -> None:
+    def __init__(self, value: Any) -> None:
         self.value = value
 
     def __hash__(self) -> Any:
@@ -116,7 +116,7 @@ class ExpressionBodyToVariable(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:      # 116
-    def get_body(self) -> T:
+    def get_body(self) -> Generator:
         variable = self.to_symbols[0].s  # type: Variable
         yield interpreter.Variable(variable.name)
         try:
@@ -132,7 +132,7 @@ class ExpressionBodyToNumber(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:      # 131
-    def get_body(self) -> T:
+    def get_body(self) -> Generator:
         num = self.to_symbols[0].s  # type: Number
         yield interpreter.Variable(num.value)
         try:
@@ -148,7 +148,7 @@ class ExpressionBodyToLambda(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:        # 146
-    def get_body(self) -> T:
+    def get_body(self) -> Generator:
         lam = self.to_symbols[0]  # type: Lambda
         yield lam.get_representation()
         try:
@@ -164,7 +164,7 @@ class ExpressionBodyToExpression(Rule):  # type: ignore
     ]
 
     # def get_body(self) -> List[Any]:      # 161
-    def get_body(self) -> T:
+    def get_body(self) -> Generator:
         expr = self.to_symbols[0]  # type: Expression
         yield expr.get_representation()
         try:
