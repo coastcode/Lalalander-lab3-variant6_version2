@@ -72,7 +72,7 @@ all_terms = [
 ]
 
 
-class Expression(Nonterminal):
+class Expression(Nonterminal):  # type: ignore
     def get_representation(self) -> Any:
         return self.to_rule.to_symbols[1].get_representation()
 
