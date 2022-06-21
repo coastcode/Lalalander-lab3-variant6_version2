@@ -72,19 +72,19 @@ all_terms = [
 ]
 
 
-class Expression(Nonterminal):
+class Expression(Nonterminal):  # type: ignore
     def get_representation(self) -> Any:
         return self.to_rule.to_symbols[1].get_representation()
 
 
-class Lambda(Nonterminal):
+class Lambda(Nonterminal):  # type: ignore
     def get_representation(self) -> Any:
         parameters = list(self.to_rule.to_symbols[2].parameters())
         expression = self.to_rule.to_symbols[-2].get_representation()
         return interpreter.Lambda(parameters, expression)
 
 
-class Parameters(Nonterminal):
+class Parameters(Nonterminal):  # type: ignore
     def parameters(self) -> Any:
         term = self.to_rule.to_symbols[0].s  # type: Parameter
         if term is EPS:
@@ -96,18 +96,18 @@ class Parameters(Nonterminal):
             return
 
 
-class NoBracketExpression(Nonterminal):
+class NoBracketExpression(Nonterminal):  # type: ignore
     def get_representation(self) -> Any:
         body = list(self.to_rule.to_symbols[0].get_body())
         return interpreter.Expression(body)
 
 
-class ExpressionBody(Nonterminal):
+class ExpressionBody(Nonterminal):  # type: ignore
     def get_body(self) -> Any:
         return self.to_rule.get_body()
 
 
-class ExpressionBodyToVariable(Rule):
+class ExpressionBodyToVariable(Rule):  # type: ignore
     rules = [
         ([ExpressionBody], [Variable, ExpressionBody]),
         ([ExpressionBody], [Variable])
@@ -122,7 +122,7 @@ class ExpressionBodyToVariable(Rule):
             return
 
 
-class ExpressionBodyToNumber(Rule):
+class ExpressionBodyToNumber(Rule):  # type: ignore
     rules = [
         ([ExpressionBody], [Number, ExpressionBody]),
         ([ExpressionBody], [Number])
@@ -137,7 +137,7 @@ class ExpressionBodyToNumber(Rule):
             return
 
 
-class ExpressionBodyToLambda(Rule):
+class ExpressionBodyToLambda(Rule):  # type: ignore
     rules = [
         ([ExpressionBody], [Lambda, ExpressionBody]),
         ([ExpressionBody], [Lambda])
@@ -152,7 +152,7 @@ class ExpressionBodyToLambda(Rule):
             return
 
 
-class ExpressionBodyToExpression(Rule):
+class ExpressionBodyToExpression(Rule):  # type: ignore
     rules = [
         ([ExpressionBody], [Expression, ExpressionBody]),
         ([ExpressionBody], [Expression])
@@ -167,23 +167,23 @@ class ExpressionBodyToExpression(Rule):
             return
 
 
-class NoBracketExpressionRule(Rule):
+class NoBracketExpressionRule(Rule):  # type: ignore
     fromSymbol = NoBracketExpression
     toSymbol = ExpressionBody
 
 
-class ExpressionRule(Rule):
+class ExpressionRule(Rule):  # type: ignore
     fromSymbol = Expression
     right = [LeftBracket, NoBracketExpression, RightBracket]
 
 
-class LambdaRule(Rule):
+class LambdaRule(Rule):  # type: ignore
     fromSymbol = Lambda
     right = [LeftBracket, LambdaKeyword, Parameters,
              Dot, NoBracketExpression, RightBracket]
 
 
-class ParametersRule(Rule):
+class ParametersRule(Rule):  # type: ignore
     rules = [
         ([Parameters], [EPS]),
         ([Parameters], [Parameter, Parameters]),

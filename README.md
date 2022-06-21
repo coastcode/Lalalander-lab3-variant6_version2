@@ -28,7 +28,7 @@ of some expressions.
 
 ## Contribution
 
-- Wu Chenyun (1329846782@qq.com) -- Implementation.
+- Wu Chenyun (1329846782@qq.com) -- Implementation and Modification.
 - Huang Yuting (hyut@hdu.edu.cn) -- Modification.
 
 ## Changelog
