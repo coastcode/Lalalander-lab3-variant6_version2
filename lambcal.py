@@ -116,8 +116,7 @@ class ExpressionBodyToVariable(Rule):  # type: ignore
         ([ExpressionBody], [Variable])
     ]
 
-    # def get_body(self) -> List[Any]:
-    def get_body(self) -> List[_RuleConnectable]:
+    def get_body(self) -> Any:
         variable = self.to_symbols[0].s  # type: Variable
         yield interpreter.Variable(variable.name)
         try:
